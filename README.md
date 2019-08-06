@@ -31,8 +31,9 @@ This repository was made during the R certification of Harvard.
 | ``identical``                  | check if to column are the same                                   |
 | ``table()``                    | display the number of unique item and how many time they occurred |
 | ``names(temperature) <- city`` | set the "names" attribute of a vector (including a list)          |
+| ``sum()``                      | sum                                                               |
 
-## Sort
+# Sort
 
 | function    | set           | Description                                                                                               |
 | ----------- | ------------- | --------------------------------------------------------------------------------------------------------- |
@@ -48,3 +49,35 @@ for example:
 ``rank(c (3, 1, 2, 5, 4)) will give c(3,1,2,5,4)``
 
 ``order(c (3, 1, 2, 5, 4)) will give c(2,3,1,5,4).``
+
+
+``murders$state[which(low, murder_rate)]``
+________________________
+
+ Create a vector ind for states in the Northeast and with murder rates lower than 1.
+``ind <- low & murders$region == "Northeast"``
+ Names of states in `ind`
+``murders$state[ind]``
+_______________________________
+Store the 3 abbreviations in a vector called `abbs` (remember that they are character vectors and need quotes)
+``abbs <- c("PA","RI","SC") ``
+ Match the abbs to the murders$abb and store in ind``
+``ind <- match( abbs, murders$abb )``
+
+Print state names from ind
+``murders$state[ind]``
+_______________________________
+ Store the 5 abbreviations in `abbs`. (remember that they are character vectors)
+``abbs<-c("MA", "ME", "MI", "MO", "MU")``
+
+ Use the %in% command to check if the entries of abbs are abbreviations in the the murders data frame
+``abbs %in% murders$abb``
+
+_________________________________
+Store the 5 abbreviations in abbs. (remember that they are character vectors)
+``abbs <- c("MA", "ME", "MI", "MO", "MU") ``
+
+use the `which` command and `!` operator to find out which index abbreviations are not actually part of the dataset and store in `ind`
+``ind <- which( !abbs %in% murders$abb )``
+Names of abbreviations in `ind`
+``abbs[ind]``
