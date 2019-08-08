@@ -52,16 +52,23 @@ for example:
 
 
 ``murders$state[which(low, murder_rate)]``
-________________________
 
- Create a vector ind for states in the Northeast and with murder rates lower than 1.
+# Which
+
+"**Which**" is the **equivalent** of a **condition** 'if' that **return the argument** that had the **condition fulfilled**.
+
+ **i.g** Create a vector "ind" for states in the Northeast and with murder rates lower than 1.
 
 ``ind <- low & murders$region == "Northeast"``
 
  Names of states in `ind`
 
 ``murders$state[ind]``
-_______________________________
+
+# Match
+
+"**Match**" 
+
 Store the 3 abbreviations in a vector called `abbs` (remember that they are character vectors and need quotes)
 
 ``abbs <- c("PA","RI","SC") ``
@@ -73,7 +80,8 @@ Store the 3 abbreviations in a vector called `abbs` (remember that they are char
 Print state names from ind
 
 ``murders$state[ind]``
-_______________________________
+
+# %in%
  Store the 5 abbreviations in `abbs`. (remember that they are character vectors)
 
 ``abbs<-c("MA", "ME", "MI", "MO", "MU")``
@@ -82,7 +90,7 @@ _______________________________
 
 ``abbs %in% murders$abb``
 
-_________________________________
+# !
 Store the 5 abbreviations in abbs. (remember that they are character vectors)
 
 ``abbs <- c("MA", "ME", "MI", "MO", "MU") ``
@@ -95,7 +103,7 @@ Names of abbreviations in `ind`
 
 ``abbs[ind]``
 
-#dplyr
+# dplyr
 
 ``library(dplyr)`` loading the dplyr library
 
@@ -122,7 +130,7 @@ with the ranks of rate from highest to lowest
  Filter to show the top 5 states with the highest murder rates
 ``murders<-filter(murders, rank < 5)``
 
-_________________________________
+________________________
 
 Use filter to create a new data frame no_south
 
@@ -144,9 +152,17 @@ show the result and only include the state, rate, and rank columns, all in one l
 
 ``filter(murders, region %in% c("West","Northeast")& rate<1 ) %>% select(state,rate,rank)``
 
-________________________
+_________________
 
 ``my_states <- data.frame(murders) %>% mutate(rate = (total/population)*100000,rank = rank(-rate)) %>% filter(region %in% c("West","Northeast")& rate <1) %>% select(state,rate,rank)``
+
+
+# Charts
+
+There is a lot of different chart that can help you understand your data.
+here is a website that reference all the charts with example for each one.
+
+[![chart r example](img/README-5209e9c0.png)](https://www.r-graph-gallery.com/)
 
 # plot
 Transform population using the log10 transformation and save to object log10_population
