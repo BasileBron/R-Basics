@@ -67,7 +67,7 @@ for example:
 
 # Match
 
-"**Match**" 
+"**Match**"
 
 Store the 3 abbreviations in a vector called `abbs` (remember that they are character vectors and need quotes)
 
@@ -160,7 +160,7 @@ _________________
 # Charts
 
 There is a lot of different chart that can help you understand your data.
-here is a website that reference all the charts with example for each one.
+here is a (website)[https://www.r-graph-gallery.com/] that reference all the charts with example for each one.
 
 [![chart r example](img/README-5209e9c0.png)](https://www.r-graph-gallery.com/)
 
